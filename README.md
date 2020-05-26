@@ -1,2 +1,243 @@
 # VBA-Street-Name-unabbreviator
 This is a VBA script for Excel that will convert a list of street names in english to their unabbreviated forms
+
+The script currently has the following abbreviations and unabbreviated counterparts implemented:
+
+| Abbreviation(s) | Unabbreviated form(s) |
+| --- | --- |
+| ALLEE, ALLY, ALY | ALLEY |
+| ANEX, ANX | ANNEX |
+| APT | APARTMENT |
+| ARC | ARCADE |
+| AV, AVE, AVEA, AVEN, AVENU, AVN, AVNUE | AVENUE |
+| BSMT | BASEMENT |
+| BAYOO, BYU | BAYOU |
+| BCH | BEACH |
+| BND | BEND |
+| BLF, BLUF | BLUFF |
+| BLFS | BLUFFS |
+| BOT, BOTTM, BTM | BOTTOM |
+| BLVD, BOUL, BOULV, BVD | BOULEVARD |
+| BR, BRNCH | BRANCH |
+| BRDGE | BRIDGE |
+| BRG | BRIDGE |
+| Bdwy | Broadway |
+| BRK | BROOK |
+| BRKS | BROOKS |
+| BLDG | BUILDING |
+| BG | BURG |
+| BGS | BURGS |
+| BYP, BYPA, BYPAS, BYPS | BYPASS |
+| CMP, CP | CAMP |
+| CANYN, CNYN, CYN | CANYON |
+| CPE | CAPE |
+| CAUSWA, CSWY | CAUSEWAY |
+| CEN, CENT, CENTR, CNTER, CNTR, CTR, | CENTER |
+| CTRS | CTRS |
+| CIR, CIRC, CIRCL, CRCL, CRCLE | CIRCLE |
+| CIRS | CIRCLES |
+| Cct | Circuit |
+| CLF, CLFS | CLIFF |
+| Cl | Close |
+| CLB | CLUB |
+| CMN | COMMON |
+| CMNS | COMMONS |
+| COR, CRN | CORNER |
+| CORS | CORNERS |
+| CR, C.R, C.R., CR. | COUNTRY ROAD |
+| CRSE | COURSE |
+| CT | COURT |
+| CTS | COURTS |
+| CV | COVE |
+| CVS | COVES |
+| CRK | CREEK |
+| CRES, CRSENT, CRSNT | CRESCENT |
+| CRST | CREST |
+| CRSSNG | CROSSING |
+| XING | CROSSING |
+| XRD | CROSSROAD |
+| XRDS | CROSSROADS |
+| CDS | CUL-DE-SAC |
+| CURV | CURVE |
+| DL | DALE |
+| DM | DAM |
+| DEPT | DEPARTMENT |
+| DIV, DV, DVD | DIVIDE |
+| DIRVE, DR, DRIV, DRV | DRIVE |
+| DRS | DRIVES |
+| E | The user gets a prompt asking if the letter " E "(as a standalone word) is short for "East" in the current row (if not, it probably is a letter for an apartment unit, e.g. "Apartment street 100 E") |
+| ESP | ESPLANADE |
+| EST | ESTATE |
+| ESTS | ESTATES |
+| EXP, EXPR, EXPRESS, EXPW, EXPWY, EXPY | EXPRESSWAY |
+| EXT, EXTN, EXTNSN, EXTS | EXTENSION |
+| FLS | FALLS |
+| FRRY, FRY | FERRY |
+| FLD | FIELD |
+| FLDS | FIELDS |
+| FLT | FLAT |
+| FLTS | FLATS |
+| FL | FLOOR |
+| F.M, F.M., FM., FM | FARM TO MARKET ROAD |
+| FRD | FORD |
+| FRDS | FORDS |
+| FRST | FOREST |
+| FORG, FRG | FORGE |
+| FRGS | FORGES |
+| FRK | FORK |
+| FRKS | FORKS |
+| FRT, FT | FORT |
+| FREEWY, FRWAY, FRWY, FWY | FREEWAY |
+| FRNT | FRONT |
+| GARDN, GDN, GRDEN, GRDN | GARDEN |
+| GDNS, GRDNS | GARDENS |
+| GATEWY, GATWAY, GTWAY, GTWY | GATEWAY |
+| GLN | GLEN |
+| GLNS | GLENS |
+| GRN | GREEN |
+| GRNS | GREENS |
+| GR, GROV, GRV | GROVE |
+| GRVS | GROVES |
+| HNGR | HANGER |
+| HARB, HARBR, HBR, HRBOR | HARBOR |
+| HBRS | HARBORS |
+| HVN | HAVEN |
+| HT | HEIGHT |
+| HTS | HEIGHTS |
+| HIGHWY, HIWAY, HIWY, HWAY, HWY | HIGHWAY |
+| HL | HILL |
+| HLS | HILLS |
+| HLLW, HOLW | HOLLOW |
+| HOLWS | HOLLOWS |
+| INFO | INFORMATION |
+| INLT | INLET |
+| INTL | INTERNATIONAL |
+| IS, ISL, ISLND | ISLAND |
+| ISLNDS, ISS | ISLANDS |
+| IL | ISLE |
+| JCT, JCTION, JCTN, JNC, JUNCTN, JUNCTON | JUNCTION |
+| JCTNS, JCTS | JUNCTIONS |
+| KY | KEY |
+| KYS | KEYS |
+| KNL, KNOL | KNOLL |
+| KNLS | KNOLLS |
+| LK | LAKE |
+| LKS | LAKES |
+| LNDG, LNDNG | LANDING |
+| LN | LANE |
+| LGT | LIGHT |
+| LGTS | LIGHTS |
+| LF | LOAF |
+| LBBY | LOBBY |
+| LCK | LOCK |
+| LCKS | LOCKS |
+| LDG, LDGE, LODG | LODGE |
+| LP | LOOP |
+| LOWR | LOWER |
+| MNR | MANOR |
+| MNRS | MANORS |
+| MDW | MEADOW |
+| MDWS, MEDOWS | MEADOWS |
+| ML | MILL |
+| MLS | MILLS |
+| MISSN, MSN, MSSN | MISSION |
+| MTWY | MOTORWAY |
+| MNT, MT | MOUNT |
+| MNTAIN, MNTN, MOUNTIN, MTIN, MTN | MOUNTAIN |
+| MNTNS, MTNS | MOUNTAINS |
+| NATL | NATIONAL |
+| NCK | NECK |
+| N | NORTH |
+| NE | NORTHEAST |
+| NW | NORTHWEST |
+| OFC | OFFICE |
+| ORCH, ORCHRD | ORCHARD |
+| OVL | OVAL |
+| OPAS | OVERPASS |
+| PDE | PARADE |
+| PK, PRK | PARK |
+| PKS | PARKS |
+| PARKWY, PKWAY, PKWY, PKY | PARKWAY |
+| PKWYS | PARKWAYS |
+| PSGE | PASSAGE |
+| PATH | PATHS |
+| PH | PENTHOUSE |
+| PKE | PIKE |
+| PNE | PINE |
+| PNES | PINES |
+| PL | PLACE |
+| PLN | PLAIN |
+| PLNS | PLAINS |
+| PLZ, PLZA | PLAZA |
+| PT | POINT |
+| PTS | POINTS |
+| PRT | PORT |
+| PRTS | PORTS |
+| PO | POST OFFICE |
+| PR, PRR | PRAIRIE |
+| RAD, RADIEL, RADL | RADIAL |
+| RANCH ROAD, RM, R.M, RM., R.M. | RANCH TO MARKET ROAD |
+| RNCH | RANCH |
+| RNCHS | RANCHES |
+| RPD | RAPID |
+| RPDS | RAPIDS |
+| RST | REST |
+| RDG, RDGE | RIDGE |
+| RDGS | RIDGES |
+| R, RIV, RIVR, RVR | RIVER |
+| RD, RDS | ROADS |
+| RM | ROOM |
+| RTE | ROUTE |
+| RR | RURAL ROUTE |
+| STR, STRT | STREET |
+| STS | STREETS |
+| S | The user gets a prompt asking if the "ST" is short for "SOUTH" or "STREET" in the current row |
+| ST., ST | The user gets a prompt asking if the "ST" is short for "SAINT" or "STREET" in the current row |
+| SHL | SHOAL |
+| SHLS | SHOALS |
+| SHOAR, SHR | SHORE |
+| SHOARS, SHRS | SHORES |
+| SKWY | SKYWAY |
+| SE | SOUTHEAST |
+| SW | SOUTHWEST |
+| SPC | SPACE |
+| SPG, SPNG, SPRNG | SPRING |
+| SPGS, SPNGS, SPRNGS | SPRINGS |
+| SQ, SQR, SQRE, SQU | SQUARE |
+| SQRS, SQS | SQUARES |
+| STA, STATN, STN | STATION |
+| STRA, STRAV, STRAVEN, STRAVN, STRVN, STRVNUE | STRAVENUE |
+| STREME, STRM | STREAM |
+| STE | SUITE |
+| SMT, SUMIT, SUMITT | SUMMIT |
+| TCE, TER, TERR | TERRACE |
+| THWY, TRWY | THROUGHWAY |
+| TRCE | TRACE |
+| TRACE | TRACES |
+| TRAK, TRK | TRACK |
+| TRKS | TRACKS |
+| TRFY | TRAFFICWAY |
+| TR, TRL | TRAIL |
+| TRLS | TRAILS |
+| TRLR | TRAILER |
+| TRLRS | TRAILERS |
+| TUNEL, TUNL, TUNLS, TUNNL | TUNNEL |
+| TPK, TPKE, TRNPK, TURNPK | TURNPIKE |
+| UPAS | UNDERPASS |
+| UN | UNION |
+| UNS | UNIONS |
+| UPPR | UPPER |
+| WALK | WALKS |
+| VALLY, VLLY, VLY | VALLEY |
+| VLYS | VALLEYS |
+| WTR | WATERS |
+| WY | WAY |
+| WL, WLS | WELL |
+| W | WEST |
+| VDCT, VIA, VIADCT | VIADUCT |
+| VW | VIEW |
+| VWS | VIEWS |
+| VILL, VILLAG, VILLG, VLG | VILLAGE |
+| VLGS | VILLAGES |
+| VL | VILLE |
+| VIS, VIST, VST, VSTA | VISTA |
