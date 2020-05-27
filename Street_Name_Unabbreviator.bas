@@ -18,7 +18,7 @@ Sub GeoCode()
     'Loop Through Each DataBody Row in Table
     For x = 1 To tbl.ListRows.Count
         ActiveCell.Offset(1, 0).Activate
-        AddrArray = Split(ActiveCell.Value, " ")
+        AddrArray = Split(UCase(ActiveCell.Value), " ")
         For i = 0 To UBound(AddrArray)
             Select Case AddrArray(i)
                 Case "ALLEE"
@@ -142,6 +142,8 @@ Sub GeoCode()
                 Case "CTRS"
                     AddrArray(i) = "CENTERS"
                 Case "CIR"
+                    AddrArray(i) = "CIRCLE"
+                Case "CIR."
                     AddrArray(i) = "CIRCLE"
                 Case "CIRC"
                     AddrArray(i) = "CIRCLE"
@@ -582,6 +584,8 @@ Sub GeoCode()
                     AddrArray(i) = "PORTS"
                 Case "PO"
                     AddrArray(i) = "POST OFFICE"
+                Case "P.O."
+                    AddrArray(i) = "POST OFFICE"
                 Case "PR"
                     AddrArray(i) = "PRAIRIE"
                 Case "PRR"
@@ -637,14 +641,14 @@ Sub GeoCode()
                 Case "RR"
                     AddrArray(i) = "RURAL ROUTE"
                 Case "ST."
-                    SaintOrStreet = MsgBox("Does the 'S' in the following address stand for 'Street'? If no is selected, 'Saint will be used instead'." & vbCrLf & ActiveCell.Value, vbQuestion + vbYesNo + vbDefaultButton2, "Saint or Street")
+                    SaintOrStreet = MsgBox("Does the 'S' in the following address stand for 'Street'? If no is selected, 'Saint' will be used instead." & vbCrLf & ActiveCell.Value, vbQuestion + vbYesNo + vbDefaultButton2, "Saint or Street")
                     If SaintOrStreet = vbYes Then
                         AddrArray(i) = "STREET"
                     Else
                         AddrArray(i) = "SAINT"
                     End If
                 Case "ST"
-                    SaintOrStreet = MsgBox("Does the 'S' in the following address stand for 'Street'? If no is selected, 'Saint will be used instead'." & vbCrLf & ActiveCell.Value, vbQuestion + vbYesNo + vbDefaultButton2, "Saint or Street")
+                    SaintOrStreet = MsgBox("Does the 'S' in the following address stand for 'Street'? If no is selected, 'Saint' will be used instead." & vbCrLf & ActiveCell.Value, vbQuestion + vbYesNo + vbDefaultButton2, "Saint or Street")
                     If SaintOrStreet = vbYes Then
                         AddrArray(i) = "STREET"
                     Else
@@ -854,4 +858,3 @@ Sub GeoCode()
         ActiveCell.Value = ModifiedAddr
     Next x
 End Sub
-
