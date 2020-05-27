@@ -231,6 +231,8 @@ Sub GeoCode()
                     AddrArray(i) = "DRIVE"
                 Case "DR"
                     AddrArray(i) = "DRIVE"
+                Case "DR."
+                    AddrArray(i) = "DRIVE"
                 Case "DR,"
                     AddrArray(i) = "DRIVE"
                 Case "DRIV"
